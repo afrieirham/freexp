@@ -27,8 +27,8 @@ export default function Home() {
             Farm Free XPs 🧑‍🌾
           </h1>
           <p className="text-violet-200 opacity-50 mt-2">
-            Contribute to open-source projects and get real-world experience
-            working as a software engineer.
+            Contribute to open-source projects and get real-world experience as
+            a software engineer.
           </p>
           <p className="text-violet-200 opacity-50 mt-6 text-xs">
             Not convinced? Watch this free course "
