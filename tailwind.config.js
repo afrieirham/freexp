@@ -6,6 +6,16 @@ module.exports = {
   },
   plugins: [require("@tailwindcss/typography"), require("daisyui")],
   daisyui: {
-    themes: ["synthwave"],
+    themes: [
+      {
+        synthwave: {
+          ...require("daisyui/src/theming/themes")["[data-theme=synthwave]"],
+          primary: "#c4b5fd",
+          secondary: "#706a80",
+          neutral: "#2a2040",
+          "base-100": "#08060d",
+        },
+      },
+    ],
   },
 };
