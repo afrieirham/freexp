@@ -1,17 +1,24 @@
 import { projects } from "@/data";
 import Head from "next/head";
 
+const title = "Free XP — Gain experience with open-source projects!";
+const description =
+  "Contribute to open-source projects and get real-world experience as a software engineer.";
+
 export default function Home() {
   return (
     <>
       <Head>
-        <title>Free XP — Get experience with open-source projects!</title>
-        <meta
-          name="description"
-          content="Contribute to open-source projects and get real-world experience
-          working as a software engineer."
-        />
+        <title>{title}</title>
+        <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta property="og:title" content={title} />
+        <meta property="og:description" content={description} />
+        <meta property="og:image" content="https://freexp.dev/og.png" />
+        <meta property="og:url" content="https://freexp.dev" />
+        <meta property="og:site_name" content={title} />
+        <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col max-w-5xl mx-auto px-4">
