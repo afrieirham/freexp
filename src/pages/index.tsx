@@ -14,7 +14,7 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col max-w-5xl mx-auto">
+      <div className="flex flex-col max-w-5xl mx-auto px-4">
         <header className="">
           <h1 className="text-3xl mt-12 font-black text-primary">
             Farm Free XPs 🧑‍🌾
@@ -35,7 +35,7 @@ export default function Home() {
             " by Frantz Kati.
           </p>
         </header>
-        <div className="grid grid-cols-3 gap-4 mt-6 mb-12">
+        <div className="grid grid-cols-1 gap-4 mt-6 mb-12 sm:grid-cols-2 md:grid-cols-3">
           {projects.map((p) => (
             <div className="card rounded-md border border-neutral">
               <div className="card-body p-4">
