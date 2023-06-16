@@ -57,4 +57,36 @@ export const projects = [
     tags: ["Next.js", "TypeScript", "T3", "Python"],
     questUrl: "https://github.com/reworkd/AgentGPT/issues",
   },
+  {
+    name: "Keep",
+    description: "Open source alerts management platform",
+    tags: ["Python"],
+    questUrl: "https://github.com/keephq/keep/issues",
+  },
+  {
+    name: "Nango",
+    description:
+      "Open-source product integration: Easily integrate you app with any external API",
+    tags: ["TypeScript", "React"],
+    questUrl: "https://github.com/NangoHQ/nango/issues",
+  },
+  {
+    name: "Trigger.dev",
+    description:
+      "✨ Trigger.dev is an open-source platform that makes it easy for developers to create event-driven background tasks directly in their code.",
+    tags: ["React", "TypeScript"],
+    questUrl: "https://github.com/triggerdotdev/trigger.dev/issues",
+  },
+  {
+    name: "Flower",
+    description: "Flower: A Friendly Federated Learning Framework",
+    tags: ["Python"],
+    questUrl: "https://github.com/adap/flower/issues",
+  },
+  {
+    name: "Lotus",
+    description: "Open Source Pricing & Packaging Infrastructure",
+    tags: ["Python", "Django", "React", "TypeScript"],
+    questUrl: "https://github.com/uselotus/lotus/issues",
+  },
 ];
