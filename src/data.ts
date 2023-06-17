@@ -103,4 +103,17 @@ export const projects = [
     tags: ["Ruby On Rails", "Ruby", "Preact", "TypeScript"],
     questUrl: "https://github.com/forem/forem/issues",
   },
+  {
+    name: "Sylius",
+    description: "Open Source eCommerce Framework on Symfony",
+    tags: ["Symfony", "PHP"],
+    questUrl: "https://github.com/Sylius/Sylius/issues",
+  },
+  {
+    name: "Invoice Ninja",
+    description:
+      "Free Invoicing Software for Small Businesses built with Laravel, Flutter and React",
+    tags: ["Laravel", "PHP", "Flutter", "Dart", "React", "TypeScript"],
+    questUrl: "https://github.com/invoiceninja/invoiceninja/issues",
+  },
 ];
