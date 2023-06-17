@@ -44,28 +44,25 @@ export default function Home() {
         </header>
         <div className="grid grid-cols-1 gap-4 mt-6 mb-12 sm:grid-cols-2 md:grid-cols-3">
           {projects.map((p) => (
-            <div className="card rounded-md border border-neutral">
-              <div className="card-body p-4">
-                <h2 className="card-title">{p.name}</h2>
+            <div key={p.id} className="card">
+              <div className="card-body p-4 bg-neutral rounded">
+                <h2 className="card-title text-primary">{p.name}</h2>
+                <div className="card-actions mb-2">
+                  {p.repos
+                    .map((r) => r.tags)
+                    .flat()
+                    .map((t) => (
+                      <div
+                        key={t}
+                        className="badge badge-primary badge-sm badge-outline rounded"
+                      >
+                        {t}
+                      </div>
+                    ))}
+                </div>
                 <p className="text-sm text-violet-200 opacity-50">
                   {p.description}
                 </p>
-                <div className="card-actions mt-2 ">
-                  {p.tags.map((t) => (
-                    <div className="badge badge-primary badge-sm badge-outline rounded">
-                      {t}
-                    </div>
-                  ))}
-                </div>
-                <div className="card-actions mt-2 ">
-                  <a
-                    href={p.questUrl}
-                    target="_blank"
-                    className="btn btn-sm text-sm normal-case btn-block btn-neutral"
-                  >
-                    View Quests
-                  </a>
-                </div>
               </div>
             </div>
           ))}
