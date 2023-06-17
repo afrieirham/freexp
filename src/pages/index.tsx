@@ -1,3 +1,4 @@
+import ProjectCard from "@/components/ProjectCard";
 import { projects } from "@/data";
 import Head from "next/head";
 
@@ -44,27 +45,7 @@ export default function Home() {
         </header>
         <div className="grid grid-cols-1 gap-4 mt-6 mb-12 sm:grid-cols-2 md:grid-cols-3">
           {projects.map((p) => (
-            <div key={p.id} className="card">
-              <div className="card-body p-4 bg-neutral rounded">
-                <h2 className="card-title text-primary">{p.name}</h2>
-                <div className="card-actions mb-2">
-                  {p.repos
-                    .map((r) => r.tags)
-                    .flat()
-                    .map((t) => (
-                      <div
-                        key={t}
-                        className="badge badge-primary badge-sm badge-outline rounded"
-                      >
-                        {t}
-                      </div>
-                    ))}
-                </div>
-                <p className="text-sm text-violet-200 opacity-50">
-                  {p.description}
-                </p>
-              </div>
-            </div>
+            <ProjectCard key={p.id} project={p} />
           ))}
         </div>
       </div>
