@@ -89,4 +89,18 @@ export const projects = [
     tags: ["Python", "Django", "React", "TypeScript"],
     questUrl: "https://github.com/uselotus/lotus/issues",
   },
+  {
+    name: "Supertokens",
+    description:
+      "Open source alternative to Auth0 / Firebase Auth / AWS Cognito",
+    tags: ["React", "TypeScript"],
+    questUrl: "https://github.com/supertokens/dashboard",
+  },
+  {
+    name: "Forem",
+    description:
+      "Forem is open source software for building communities. Communities for your peers, customers, fanbases, families, friends, and any other time and space where people need to come together to be part of a collective.",
+    tags: ["Ruby On Rais", "Ruby", "Preact", "TypeScript"],
+    questUrl: "https://github.com/forem/forem/issues",
+  },
 ];
