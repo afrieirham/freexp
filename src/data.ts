@@ -100,7 +100,7 @@ export const projects = [
     name: "Forem",
     description:
       "Forem is open source software for building communities. Communities for your peers, customers, fanbases, families, friends, and any other time and space where people need to come together to be part of a collective.",
-    tags: ["Ruby On Rais", "Ruby", "Preact", "TypeScript"],
+    tags: ["Ruby On Rails", "Ruby", "Preact", "TypeScript"],
     questUrl: "https://github.com/forem/forem/issues",
   },
 ];
