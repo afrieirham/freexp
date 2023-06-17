@@ -3,6 +3,7 @@ export const projects = [
     id: 1,
     name: "Cal.com",
     description: "Scheduling infrastructure for absolutely everyone.",
+    slug: "calcom",
     repos: [
       {
         url: "https://github.com/calcom/cal.com/issues",
@@ -14,6 +15,7 @@ export const projects = [
     id: 2,
     name: "RailsDevs.com",
     description: "The reverse job board for Ruby on Rails developers.",
+    slug: "railsdevs",
     repos: [
       {
         url: "https://github.com/joemasilotti/railsdevs.com/issues",
@@ -25,6 +27,7 @@ export const projects = [
     id: 3,
     name: "Supabase",
     description: "The open source Firebase alternative.",
+    slug: "supabase",
     repos: [
       {
         tags: ["Next.js", "TypeScript", "React"],
@@ -36,6 +39,7 @@ export const projects = [
     id: 4,
     name: "Helicone",
     description: "Tooling for Generative AI",
+    slug: "helicone",
     repos: [
       {
         tags: ["Next.js", "TypeScript", "React"],
@@ -48,6 +52,7 @@ export const projects = [
     name: "Payload",
     description:
       "Built with React + TypeScript, Payload is a free and open-source Headless CMS.",
+    slug: "payloadcms",
     repos: [
       {
         tags: ["TypeScript", "React"],
@@ -59,6 +64,7 @@ export const projects = [
     id: 6,
     name: "Mirrorful",
     description: "Create the building blocks of your app",
+    slug: "mirrorful",
     repos: [
       {
         tags: ["Next.js", "TypeScript", "React"],
@@ -71,6 +77,7 @@ export const projects = [
     name: "Infisical",
     description:
       "♾ Infisical is an open-source, end-to-end encrypted platform for secret management: sync secrets across your team/infrastructure and prevent secret leaks.",
+    slug: "infisical",
     repos: [
       {
         tags: ["Next.js", "TypeScript", "React"],
@@ -83,6 +90,7 @@ export const projects = [
     name: "highlight.io",
     description:
       "highlight.io: The open source, full-stack monitoring platform. Error monitoring, session replay, logging and more.",
+    slug: "highlight",
     repos: [
       {
         tags: ["Golang", "TypeScript"],
@@ -95,6 +103,7 @@ export const projects = [
     name: "Reworkd",
     description:
       "Assemble, configure, and deploy autonomous AI Agents in your browser.",
+    slug: "reworkd",
     repos: [
       {
         tags: ["Next.js", "TypeScript", "t3", "Python"],
@@ -106,6 +115,7 @@ export const projects = [
     id: 10,
     name: "Keep",
     description: "Open source alerts management platform",
+    slug: "keep",
     repos: [
       {
         tags: ["Python", "Next.js", "TypeScript"],
@@ -118,6 +128,7 @@ export const projects = [
     name: "Nango",
     description:
       "Open-source product integration: Easily integrate you app with any external API",
+    slug: "nango",
     repos: [
       {
         tags: ["TypeScript", "React"],
@@ -130,6 +141,7 @@ export const projects = [
     name: "Trigger.dev",
     description:
       "✨ Trigger.dev is an open-source platform that makes it easy for developers to create event-driven background tasks directly in their code.",
+    slug: "triggerdotdev",
     repos: [
       {
         tags: ["React", "TypeScript"],
@@ -141,6 +153,7 @@ export const projects = [
     id: 13,
     name: "Flower",
     description: "Flower: A Friendly Federated Learning Framework",
+    slug: "flower",
     repos: [
       {
         tags: ["Python"],
@@ -152,6 +165,7 @@ export const projects = [
     id: 14,
     name: "Lotus",
     description: "Open Source Pricing & Packaging Infrastructure",
+    slug: "lotus",
     repos: [
       {
         tags: ["Python", "Django", "React", "TypeScript"],
@@ -164,6 +178,7 @@ export const projects = [
     name: "Supertokens",
     description:
       "Open source alternative to Auth0 / Firebase Auth / AWS Cognito",
+    slug: "supertokens",
     repos: [
       {
         tags: ["React", "TypeScript"],
@@ -176,6 +191,7 @@ export const projects = [
     name: "Forem",
     description:
       "Forem is open source software for building communities. Communities for your peers, customers, fanbases, families, friends, and any other time and space where people need to come together to be part of a collective.",
+    slug: "forem",
     repos: [
       {
         tags: ["Ruby On Rails", "Ruby", "Preact", "TypeScript"],
@@ -187,6 +203,7 @@ export const projects = [
     id: 17,
     name: "Sylius",
     description: "Open Source eCommerce Framework on Symfony",
+    slug: "sylius",
     repos: [
       {
         tags: ["Symfony", "PHP"],
@@ -199,6 +216,7 @@ export const projects = [
     name: "Invoice Ninja",
     description:
       "Free Invoicing Software for Small Businesses built with Laravel, Flutter and React",
+    slug: "invoiceninja",
     repos: [
       {
         tags: ["Laravel", "PHP", "Flutter", "Dart", "React", "TypeScript"],
