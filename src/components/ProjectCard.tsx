@@ -1,7 +1,7 @@
-import { projects } from "@/data";
+import { Project } from "@/type";
 import Badge from "./Badge";
 
-function ProjectCard({ project }: { project: (typeof projects)[0] }) {
+function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="card">
       <div className="card-body p-4 bg-neutral rounded">
