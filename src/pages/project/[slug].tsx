@@ -35,8 +35,8 @@ function Project() {
         <div className="text-xs mt-2 text-violet-300">
           <a className="link" href={data.website} target="_blank">
             Website
-          </a>{" "}
-          |{" "}
+          </a>
+          {" | "}
           <a className="link" href={data.github} target="_blank">
             GitHub
           </a>

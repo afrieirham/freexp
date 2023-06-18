@@ -23,7 +23,12 @@ function RepositoryCard({ url }: { url: string }) {
 
   return (
     <div className="bg-neutral rounded p-4 mt-4">
-      <p className="text-primary font-bold">{repo?.full_name}</p>
+      <a
+        href={repo?.html_url}
+        className="text-primary font-bold hover:text-primary-focus"
+      >
+        {repo?.full_name}
+      </a>
       <p className="text-violet-200 text-sm">{repo?.description}</p>
       <div className="card-actions mt-4">
         {repo?.topics?.map((t) => (

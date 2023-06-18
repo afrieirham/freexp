@@ -7,7 +7,7 @@ function ProjectCard({ project }: { project: (typeof projects)[0] }) {
       <div className="card-body p-4 bg-neutral rounded">
         <a
           href={`/project/${project.slug}`}
-          className="card-title text-primary"
+          className="card-title text-primary hover:text-primary-focus "
         >
           {project.name}
         </a>
