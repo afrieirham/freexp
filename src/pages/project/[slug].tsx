@@ -2,6 +2,7 @@ import RepositoryCard from "@/components/RepositoryCard";
 import { Project } from "@/type";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
+import Link from "next/link";
 
 const apiUrl = "https://api.freexp.dev/projects";
 
@@ -74,9 +75,9 @@ function Project({ project }: { project: Project }) {
           ))}
         </div>
         <div className="mt-4 mb-12">
-          <a href="/" className="btn btn-ghost btn-xs normal-case">
+          <Link href="/" className="btn btn-ghost btn-xs normal-case">
             ← discover more open-source projects
-          </a>
+          </Link>
         </div>
       </div>
     </>

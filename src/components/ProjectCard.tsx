@@ -1,16 +1,17 @@
 import { Project } from "@/type";
+import Link from "next/link";
 import Badge from "./Badge";
 
 function ProjectCard({ project }: { project: Project }) {
   return (
     <div className="card">
       <div className="card-body p-4 bg-neutral rounded">
-        <a
+        <Link
           href={`/project/${project.slug}`}
           className="card-title text-primary hover:text-primary-focus "
         >
           {project.name}
-        </a>
+        </Link>
         <p className="text-sm text-violet-200 opacity-50">
           {project.description}
         </p>

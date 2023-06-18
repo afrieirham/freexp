@@ -6,6 +6,7 @@ function RepositoryCard({ repo }: { repo: Repo }) {
     <div className="bg-neutral rounded p-4 mt-4">
       <a
         href={repo?.html_url}
+        target="_blank"
         className="text-primary font-bold hover:text-primary-focus"
       >
         {repo?.full_name}
