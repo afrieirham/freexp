@@ -1,26 +1,7 @@
-import { useEffect, useState } from "react";
+import { Repo } from "@/type";
 import Badge from "./Badge";
 
-type Repo = {
-  full_name: string;
-  description: string;
-  topics: string[];
-  html_url: string;
-  open_issues: number;
-};
-
-function RepositoryCard({ url }: { url: string }) {
-  const [repo, setRepo] = useState<null | Repo>(null);
-
-  useEffect(() => {
-    const get = async () => {
-      const data = await fetch(url).then((r) => r.json());
-      setRepo(data);
-    };
-
-    get();
-  }, []);
-
+function RepositoryCard({ repo }: { repo: Repo }) {
   return (
     <div className="bg-neutral rounded p-4 mt-4">
       <a
