@@ -44,16 +44,12 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col max-w-5xl mx-auto px-4">
-        <header className="mb-4">
-          <h1 className="text-3xl mt-12 font-black text-primary">
-            Farm Free XPs 🧑‍🌾
+        <header className="mt-32 mb-8 text-center">
+          <h1 className="text-4xl font-bold text-primary">
+            Gain XPs with open-source projects.
           </h1>
-          <p className="text-violet-200 opacity-50 mt-2">
-            Contribute to open-source projects and get real-world experience as
-            a software engineer.
-          </p>
-          <p className="text-violet-200 opacity-50 mt-2 text-xs">
-            Not convinced? Watch this free course "
+          {/* <p className="text-gray-200 opacity-50 mt-2 text-sm">
+            Watch this free course "
             <a
               href="https://www.crushingit.tech/open-source"
               target="_blank"
@@ -62,15 +58,17 @@ export default function Home() {
               Open Source: The Complete Guide
             </a>
             " by Frantz Kati.
-          </p>
+          </p> */}
         </header>
 
-        <input
-          type="text"
-          placeholder="Search tech stack (e.g. Next.js, Laravel, React)"
-          className="input input-bordered input-secondary w-full max-w-sm"
-          onChange={onChange}
-        />
+        <div className="flex justify-center items-center w-full mb-16">
+          <input
+            type="text"
+            placeholder="Search tech stack (e.g. Next.js, Laravel, React)"
+            className="input input-bordered input-secondary text-sm w-full max-w-lg"
+            onChange={onChange}
+          />
+        </div>
 
         <div className="mt-4 mb-12">
           {isLoading ? (

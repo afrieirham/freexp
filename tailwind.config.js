@@ -10,10 +10,20 @@ module.exports = {
       {
         synthwave: {
           ...require("daisyui/src/theming/themes")["[data-theme=synthwave]"],
-          primary: "#c4b5fd",
-          secondary: "#706a80",
-          neutral: "#2a2040",
-          "base-100": "#08060d",
+          primary: "#ffffff",
+          secondary: "#28252D",
+          neutral: "#17151D",
+          "base-100": "#14121A",
+          ".btn-railway": {
+            "background-color": "#211F2C",
+            "border-color": "#33323D",
+            color: "#ffffff",
+          },
+          ".btn-railway:hover": {
+            "background-color": "#33323D",
+            "border-color": "#53525F",
+            color: "#ffffff",
+          },
         },
       },
     ],

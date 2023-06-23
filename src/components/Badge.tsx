@@ -2,9 +2,7 @@ import React, { ReactNode } from "react";
 
 function Badge({ children }: { children: ReactNode }) {
   return (
-    <div className="badge badge-primary badge-sm badge-outline rounded">
-      {children}
-    </div>
+    <div className="badge badge-secondary badge-sm rounded">{children}</div>
   );
 }
 

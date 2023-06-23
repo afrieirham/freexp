@@ -54,18 +54,24 @@ function Project({ project }: { project: Project }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className="flex flex-col max-w-5xl mx-auto px-4">
-        <h1 className="text-3xl mt-12 font-black text-primary">
+        <h1 className="text-2xl mt-12 font-semibold text-primary">
           {project?.name}
         </h1>
-        <p className="text-violet-200 opacity-50 mt-2">
-          {project?.description}
-        </p>
-        <div className="text-xs mt-2 text-violet-300">
-          <a className="link" href={project?.website} target="_blank">
+        <p className="text-gray-200 opacity-50 mt-2">{project?.description}</p>
+        <div className="text-xs mt-2 text-gray-300">
+          <a
+            className="cursor-pointer hover:text-gray-400 hover:underline"
+            href={project?.website}
+            target="_blank"
+          >
             Website
           </a>
-          {" | "}
-          <a className="link" href={project?.github} target="_blank">
+          {" • "}
+          <a
+            className="cursor-pointer hover:text-gray-400 hover:underline"
+            href={project?.github}
+            target="_blank"
+          >
             GitHub
           </a>
         </div>
