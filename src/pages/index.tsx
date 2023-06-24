@@ -31,22 +31,24 @@ export default function Home() {
   };
 
   useEffect(() => {
-    const projectCopy = data ? [...data] : [];
+    if (data) {
+      const projectCopy = [...data];
 
-    switch (sort) {
-      case 1:
-        setProjects(projectCopy.reverse());
-        break;
+      switch (sort) {
+        case 1:
+          setProjects(projectCopy.reverse());
+          break;
 
-      case 3:
-        setProjects(projectCopy.sort((a, b) => a.name.localeCompare(b.name)));
-        break;
-      case 2:
-      default:
-        setProjects(projectCopy);
-        break;
+        case 3:
+          setProjects(projectCopy.sort((a, b) => a.name.localeCompare(b.name)));
+          break;
+        case 2:
+        default:
+          setProjects(projectCopy);
+          break;
+      }
     }
-  }, [sort]);
+  }, [sort, data]);
 
   return (
     <div className="relative">
