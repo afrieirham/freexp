@@ -29,7 +29,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className="relative">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -43,6 +43,9 @@ export default function Home() {
         <meta name="twitter:card" content="summary_large_image" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <div className="absolute -z-10 h-full w-full left-0 blur-3xl bg-[url(/gradient.svg)]" />
+
       <div className="flex flex-col max-w-5xl mx-auto px-4">
         <header className="mt-32 mb-8 text-center">
           <h1 className="text-4xl font-bold text-primary">
@@ -84,6 +87,6 @@ export default function Home() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
