@@ -2,7 +2,7 @@ import ProjectCard from "@/components/ProjectCard";
 import { Project } from "@/type";
 import Head from "next/head";
 import { stringify } from "querystring";
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, useEffect, useState } from "react";
 import useSWR, { Fetcher } from "swr";
 
 const title = "Free XP — Gain experience with open-source projects!";
@@ -13,9 +13,11 @@ const fetcher: Fetcher<Project[], string> = (url: string) =>
   fetch(url).then((r) => r.json());
 
 export default function Home() {
+  const [sort, setSort] = useState(1);
   const [term, setTerm] = useState("");
-  const query = stringify({ term });
+  const [projects, setProjects] = useState<Project[]>();
 
+  const query = stringify({ term });
   const { data, isLoading } = useSWR("/api/projects?" + query, fetcher);
 
   let filterTimeout: NodeJS.Timeout;
@@ -27,6 +29,24 @@ export default function Home() {
       setTerm(e.target.value);
     }, 500);
   };
+
+  useEffect(() => {
+    const projectCopy = data ? [...data] : [];
+
+    switch (sort) {
+      case 1:
+        setProjects(projectCopy.reverse());
+        break;
+
+      case 3:
+        setProjects(projectCopy.sort((a, b) => a.name.localeCompare(b.name)));
+        break;
+      case 2:
+      default:
+        setProjects(projectCopy);
+        break;
+    }
+  }, [sort]);
 
   return (
     <div className="relative">
@@ -64,13 +84,24 @@ export default function Home() {
           </p> */}
         </header>
 
-        <div className="flex justify-center items-center w-full mb-16">
+        <div className="flex justify-center items-center w-full mb-8">
           <input
             type="text"
             placeholder="Search tech stack (e.g. Next.js, Laravel, React)"
             className="input input-bordered input-secondary text-sm w-full max-w-lg"
             onChange={onChange}
           />
+        </div>
+
+        <div className="flex w-full justify-end">
+          <select
+            className="select select-bordered select-secondary font-normal"
+            onChange={(e) => setSort(Number(e.target.value))}
+          >
+            <option value={1}>Recently added</option>
+            <option value={2}>Earliest added</option>
+            <option value={3}>Sort alphabetically (A-Z)</option>
+          </select>
         </div>
 
         <div className="mt-4 mb-12">
@@ -80,7 +111,7 @@ export default function Home() {
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-              {data?.map((p) => (
+              {projects?.map((p) => (
                 <ProjectCard key={p.id} project={p} />
               ))}
             </div>
