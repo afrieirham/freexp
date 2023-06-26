@@ -1,5 +1,6 @@
 import ProjectCard from "@/components/ProjectCard";
 import { Project } from "@/type";
+import { GetServerSideProps, InferGetServerSidePropsType } from "next";
 import Head from "next/head";
 import { stringify } from "querystring";
 import { ChangeEvent, useEffect, useState } from "react";
@@ -12,10 +13,20 @@ const description =
 const fetcher: Fetcher<Project[], string> = (url: string) =>
   fetch(url).then((r) => r.json());
 
-export default function Home() {
+export const getServerSideProps: GetServerSideProps<{
+  serverProjects: Project[];
+}> = async () => {
+  const res = await fetch("https://api.freexp.dev/projects");
+  const serverProjects = await res.json();
+  return { props: { serverProjects } };
+};
+
+export default function Home({
+  serverProjects,
+}: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [sort, setSort] = useState(1);
   const [term, setTerm] = useState("");
-  const [projects, setProjects] = useState<Project[]>();
+  const [projects, setProjects] = useState<Project[]>(serverProjects.reverse());
 
   const query = stringify({ term });
   const { data, isLoading } = useSWR("/api/projects?" + query, fetcher);
@@ -107,17 +118,11 @@ export default function Home() {
         </div>
 
         <div className="mt-4 mb-12">
-          {isLoading ? (
-            <div className="flex w-full justify-center items-center mt-20">
-              <span className="loading loading-dots loading-md mx-auto" />
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
-              {projects?.map((p) => (
-                <ProjectCard key={p.id} project={p} />
-              ))}
-            </div>
-          )}
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+            {projects?.map((p) => (
+              <ProjectCard key={p.id} project={p} isLoading={isLoading} />
+            ))}
+          </div>
         </div>
       </div>
     </div>
