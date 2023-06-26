@@ -1,6 +1,6 @@
 import ProjectCard from "@/components/ProjectCard";
 import { Project } from "@/type";
-import { GetServerSideProps, InferGetServerSidePropsType } from "next";
+import { GetStaticProps, InferGetServerSidePropsType } from "next";
 import Head from "next/head";
 import { stringify } from "querystring";
 import { ChangeEvent, useEffect, useState } from "react";
@@ -13,20 +13,24 @@ const description =
 const fetcher: Fetcher<Project[], string> = (url: string) =>
   fetch(url).then((r) => r.json());
 
-export const getServerSideProps: GetServerSideProps<{
-  serverProjects: Project[];
+export const getStaticProps: GetStaticProps<{
+  originalProjects: Project[];
 }> = async () => {
   const res = await fetch("https://api.freexp.dev/projects");
-  const serverProjects = await res.json();
-  return { props: { serverProjects: serverProjects.reverse() } };
+  const originalProjects: Project[] = await res.json();
+  return {
+    props: {
+      originalProjects: originalProjects.reverse(),
+    },
+  };
 };
 
 export default function Home({
-  serverProjects,
-}: InferGetServerSidePropsType<typeof getServerSideProps>) {
+  originalProjects,
+}: InferGetServerSidePropsType<typeof getStaticProps>) {
   const [sort, setSort] = useState(1);
   const [term, setTerm] = useState("");
-  const [projects, setProjects] = useState<Project[]>(serverProjects);
+  const [projects, setProjects] = useState<Project[]>(originalProjects);
 
   const query = stringify({ term });
   const { data, isLoading } = useSWR("/api/projects?" + query, fetcher);
@@ -59,7 +63,7 @@ export default function Home({
           break;
       }
     } else {
-      setProjects(serverProjects);
+      setProjects(originalProjects);
     }
   }, [sort, data]);
 
