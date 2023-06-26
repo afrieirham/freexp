@@ -18,7 +18,7 @@ export const getServerSideProps: GetServerSideProps<{
 }> = async () => {
   const res = await fetch("https://api.freexp.dev/projects");
   const serverProjects = await res.json();
-  return { props: { serverProjects } };
+  return { props: { serverProjects: serverProjects.reverse() } };
 };
 
 export default function Home({
@@ -26,7 +26,7 @@ export default function Home({
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
   const [sort, setSort] = useState(1);
   const [term, setTerm] = useState("");
-  const [projects, setProjects] = useState<Project[]>(serverProjects.reverse());
+  const [projects, setProjects] = useState<Project[]>(serverProjects);
 
   const query = stringify({ term });
   const { data, isLoading } = useSWR("/api/projects?" + query, fetcher);
@@ -58,6 +58,8 @@ export default function Home({
           setProjects(projectCopy);
           break;
       }
+    } else {
+      setProjects(serverProjects);
     }
   }, [sort, data]);
 
