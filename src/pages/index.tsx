@@ -28,6 +28,7 @@ export const getStaticProps: GetStaticProps<{
 export default function Home({
   originalProjects,
 }: InferGetServerSidePropsType<typeof getStaticProps>) {
+  const [firstLoad, setFirstLoad] = useState(true);
   const [sort, setSort] = useState(1);
   const [term, setTerm] = useState("");
   const [projects, setProjects] = useState<Project[]>(originalProjects);
@@ -47,6 +48,7 @@ export default function Home({
 
   useEffect(() => {
     if (data) {
+      setFirstLoad(false);
       const projectCopy = [...data];
 
       switch (sort) {
@@ -126,7 +128,11 @@ export default function Home({
         <div className="mt-4 mb-12">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {projects?.map((p) => (
-              <ProjectCard key={p.id} project={p} isLoading={isLoading} />
+              <ProjectCard
+                key={p.id}
+                project={p}
+                isLoading={!firstLoad && isLoading}
+              />
             ))}
           </div>
         </div>
