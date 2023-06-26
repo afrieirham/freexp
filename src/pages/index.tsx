@@ -22,6 +22,8 @@ export const getStaticProps: GetStaticProps<{
     props: {
       originalProjects: originalProjects.reverse(),
     },
+    // revalidate every 1 minute
+    revalidate: 60 * 1,
   };
 };
 
