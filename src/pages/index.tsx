@@ -89,12 +89,12 @@ export default function Home({
 
       <div className="absolute -z-10 h-full w-full left-0 blur-3xl bg-[url(/gradient.svg)]" />
 
-      <div className="flex flex-col max-w-5xl mx-auto px-4">
+      <div className="flex flex-col max-w-5xl px-4 mx-auto">
         <header className="mt-32 mb-8 text-center">
           <h1 className="text-4xl font-bold text-primary">
             Gain XPs with open-source projects.
           </h1>
-          {/* <p className="text-gray-200 opacity-50 mt-2 text-sm">
+          {/* <p className="mt-2 text-sm text-gray-200 opacity-50">
             Watch this free course "
             <a
               href="https://www.crushingit.tech/open-source"
@@ -107,18 +107,18 @@ export default function Home({
           </p> */}
         </header>
 
-        <div className="flex justify-center items-center w-full mb-8">
+        <div className="flex flex-col items-center justify-center w-full mb-8">
           <input
             type="text"
             placeholder="Search tech stack (e.g. Next.js, Laravel, React)"
-            className="input input-bordered input-secondary text-sm w-full max-w-lg"
+            className="w-full max-w-lg text-sm input input-bordered input-secondary"
             onChange={onChange}
           />
         </div>
 
-        <div className="flex w-full justify-end">
+        <div className="flex items-center justify-end w-full">
           <select
-            className="select select-bordered select-secondary font-normal"
+            className="font-normal select select-bordered select-secondary"
             onChange={(e) => setSort(Number(e.target.value))}
           >
             <option value={1}>Recently added</option>
@@ -127,7 +127,7 @@ export default function Home({
           </select>
         </div>
 
-        <div className="mt-4 mb-12">
+        <div className="mt-4">
           <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
             {projects?.map((p) => (
               <ProjectCard
@@ -137,6 +137,20 @@ export default function Home({
               />
             ))}
           </div>
+        </div>
+        <div className="flex items-center justify-center w-full my-12">
+          <a
+            href="https://www.producthunt.com/posts/free-xp?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-free&#0045;xp"
+            target="_blank"
+          >
+            <img
+              src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=407942&theme=light"
+              alt="Free&#0032;XP - Gain&#0032;experience&#0032;with&#0032;open&#0045;source&#0032;projects&#0033; | Product Hunt"
+              style={{ width: "250px", height: "54px" }}
+              width="250"
+              height="54"
+            />
+          </a>
         </div>
       </div>
     </div>
