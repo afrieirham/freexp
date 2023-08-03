@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 function Header() {
@@ -5,12 +6,12 @@ function Header() {
     <header>
       <div className="hidden mx-auto text-gray-500 sm:flex max-w-7xl navbar bg-base-100">
         <div className="flex-1">
-          <a className="flex items-center gap-2">
+          <Link href="/" className="flex items-center gap-2">
             <img src="/favicon.ico" className="w-12 h-12" />
             <span className="font-bold text-gray-500 normal-case">
               FreeXP.dev
             </span>
-          </a>
+          </Link>
         </div>
         <div className="flex-none">
           <ul className="px-1 menu menu-horizontal">
