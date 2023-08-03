@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import { Head, Html, Main, NextScript } from "next/document";
 
 export default function Document() {
@@ -11,6 +12,7 @@ export default function Document() {
         ></script>
       </Head>
       <body>
+        <Header />
         <Main />
         <NextScript />
       </body>
