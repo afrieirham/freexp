@@ -5,6 +5,7 @@ import Head from "next/head";
 import Link from "next/link";
 
 const apiUrl = "https://api.freexp.dev/projects";
+const accessToken = process.env.GITHUB_API_TOKEN;
 
 export const getStaticProps: GetStaticProps<{ project: Project }> = async (
   context
@@ -12,7 +13,11 @@ export const getStaticProps: GetStaticProps<{ project: Project }> = async (
   const slug = context.params?.slug;
   const project = await fetch(`${apiUrl}?slug=${slug}`).then((r) => r.json());
   const repoPromise = project[0]?.repos.map(async (url: string) =>
-    fetch(url).then((r) => r.json())
+    fetch(url, {
+      headers: {
+        Authorization: `Bearer ${accessToken}`,
+      },
+    }).then((r) => r.json())
   );
 
   const repos = (await Promise.all(repoPromise)) as Repo[];
