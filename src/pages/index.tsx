@@ -90,7 +90,7 @@ export default function Home({
       <div className="absolute -z-10 h-full w-full left-0 blur-3xl bg-[url(/gradient.svg)]" />
 
       <div className="flex flex-col max-w-5xl px-4 mx-auto">
-        <header className="mt-24 mb-8 text-center">
+        <div className="mb-8 text-center sm:mt-24">
           <h1 className="text-4xl font-bold text-primary">
             Gain XPs with open-source projects.
           </h1>
@@ -105,7 +105,7 @@ export default function Home({
             </a>
             " by Frantz Kati.
           </p> */}
-        </header>
+        </div>
 
         <div className="flex flex-col items-center justify-center w-full mb-8">
           <input

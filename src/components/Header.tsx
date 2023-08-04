@@ -36,41 +36,55 @@ function Header() {
         </div>
       </div>
 
-      <div className="flex navbar bg-base-100 sm:hidden">
-        <div className="navbar-start">
-          <div className="dropdown ">
-            <label tabIndex={0} className="btn btn-ghost btn-circle">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                className="w-5 h-5"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="M4 6h16M4 12h16M4 18h7"
-                />
-              </svg>
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+      <div className="sm:hidden drawer">
+        <input id="my-drawer" type="checkbox" className="drawer-toggle" />
+
+        <div className="m-4 drawer-content">
+          <label htmlFor="my-drawer" className="btn btn-ghost">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="w-5 h-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
             >
-              <li>
-                <a href="https://www.ossjobs.dev/" target="_blank">
-                  Open Source Jobs
-                </a>
-              </li>
-              <li>
-                <a href="https://www.opensourcealternative.to/" target="_blank">
-                  Open Source Alternatives
-                </a>
-              </li>
-            </ul>
-          </div>
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h7"
+              />
+            </svg>
+          </label>
+        </div>
+        <div className="z-20 drawer-side">
+          <label htmlFor="my-drawer" className="drawer-overlay"></label>
+
+          <ul className="h-full gap-2 p-4 w-80 menu bg-base-200 text-base-content">
+            <Link href="/" className="flex items-center gap-2 mb-6">
+              <img src="/favicon.ico" className="w-12 h-12" />
+              <span className="font-bold text-gray-500 normal-case">
+                FreeXP.dev
+              </span>
+            </Link>
+            <li>
+              <a href="https://www.ossjobs.dev/" target="_blank">
+                Open Source Jobs
+              </a>
+            </li>
+            <li>
+              <a href="https://www.opensourcealternative.to/" target="_blank">
+                Open Source Alternatives
+              </a>
+            </li>
+            <a
+              target="_blank"
+              href="https://github.com/afrieirham/freexp-db"
+              className="mt-2 text-xs normal-case btn btn-sm btn-outline btn-railway"
+            >
+              Add Project
+            </a>
+          </ul>
         </div>
       </div>
     </header>
