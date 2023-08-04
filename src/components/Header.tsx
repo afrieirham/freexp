@@ -4,7 +4,7 @@ import React from "react";
 function Header() {
   return (
     <header>
-      <div className="hidden mx-auto text-gray-500 sm:flex max-w-7xl navbar bg-base-100">
+      <div className="hidden mx-auto text-gray-500 sm:flex sm:items-center sm:justify-center max-w-7xl navbar bg-base-100">
         <div className="flex-1">
           <Link href="/" className="flex items-center gap-2">
             <img src="/favicon.ico" className="w-12 h-12" />
@@ -14,7 +14,7 @@ function Header() {
           </Link>
         </div>
         <div className="flex-none">
-          <ul className="px-1 menu menu-horizontal">
+          <ul className="px-1 text-xs menu menu-horizontal">
             <li>
               <a href="https://www.ossjobs.dev/" target="_blank">
                 Open Source Jobs
@@ -26,6 +26,13 @@ function Header() {
               </a>
             </li>
           </ul>
+          <a
+            target="_blank"
+            href="https://github.com/afrieirham/freexp-db"
+            className="text-xs normal-case btn btn-sm btn-block btn-outline btn-railway sm:w-auto"
+          >
+            Add Project
+          </a>
         </div>
       </div>
 
