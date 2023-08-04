@@ -1,5 +1,5 @@
 import RepositoryCard from "@/components/RepositoryCard";
-import { Project } from "@/type";
+import { Project, Repo } from "@/type";
 import { GetStaticPaths, GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
@@ -11,11 +11,11 @@ export const getStaticProps: GetStaticProps<{ project: Project }> = async (
 ) => {
   const slug = context.params?.slug;
   const project = await fetch(`${apiUrl}?slug=${slug}`).then((r) => r.json());
-  const repoPromise = project[0].repos.map(async (url: string) =>
+  const repoPromise = project[0]?.repos.map(async (url: string) =>
     fetch(url).then((r) => r.json())
   );
 
-  const repos = await Promise.all(repoPromise);
+  const repos = (await Promise.all(repoPromise)) as Repo[];
 
   return {
     props: { project: { ...project[0], repos } },
@@ -53,12 +53,12 @@ function Project({ project }: { project: Project }) {
         <meta property="og:site_name" content={title} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <div className="flex flex-col max-w-5xl mx-auto px-4">
-        <h1 className="text-2xl mt-12 font-semibold text-primary">
+      <div className="flex flex-col max-w-5xl px-4 mx-auto">
+        <h1 className="mt-12 text-2xl font-semibold text-primary">
           {project?.name}
         </h1>
-        <p className="text-gray-200 opacity-50 mt-2">{project?.description}</p>
-        <div className="text-xs mt-2 text-gray-300">
+        <p className="mt-2 text-gray-200 opacity-50">{project?.description}</p>
+        <div className="mt-2 text-xs text-gray-300">
           <a
             className="cursor-pointer hover:text-gray-400 hover:underline"
             href={project?.website}
@@ -81,7 +81,7 @@ function Project({ project }: { project: Project }) {
           ))}
         </div>
         <div className="mt-4 mb-12">
-          <Link href="/" className="btn btn-ghost btn-xs normal-case">
+          <Link href="/" className="normal-case btn btn-ghost btn-xs">
             ← discover more open-source projects
           </Link>
         </div>
