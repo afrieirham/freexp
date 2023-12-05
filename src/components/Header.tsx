@@ -16,6 +16,11 @@ function Header() {
         <div className="flex-none">
           <ul className="px-1 text-xs menu menu-horizontal">
             <li>
+              <a href="https://myprs.xyz/" target="_blank">
+                Show your PRs – MyPRs.xyz
+              </a>
+            </li>
+            <li>
               <a href="https://www.ossjobs.dev/" target="_blank">
                 Open Source Jobs
               </a>
@@ -67,6 +72,11 @@ function Header() {
                 FreeXP.dev
               </span>
             </Link>
+            <li>
+              <a href="https://myprs.xyz/" target="_blank">
+                Show your PRs – MyPRs.xyz
+              </a>
+            </li>
             <li>
               <a href="https://www.ossjobs.dev/" target="_blank">
                 Open Source Jobs

@@ -107,13 +107,19 @@ export default function Home({
           </p> */}
         </div>
 
-        <div className="flex flex-col items-center justify-center w-full mb-8">
+        <div className="flex flex-col items-center justify-center w-full mb-4">
           <input
             type="text"
             placeholder="Search tech stack (e.g. Next.js, Laravel, React)"
             className="w-full max-w-lg text-sm input input-bordered input-secondary"
             onChange={onChange}
           />
+          <p className="mt-2 text-sm text-gray-200 opacity-50">
+            Showcase your contributions with{" "}
+            <a href="https://MyPRs.xyz" target="_blank" className="link">
+              MyPRs.xyz
+            </a>
+          </p>
         </div>
 
         <div className="flex items-center justify-end w-full">
